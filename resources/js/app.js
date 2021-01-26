@@ -8,9 +8,7 @@ const { default: Axios } = require('axios');
 
 require('./bootstrap'); 
 import Vue from 'vue';
-//import VeeValidate from 'vee-validate';
 
-//Vue.use(VeeValidate);
 
 window.Vue = require('vue');
 
