@@ -58,4 +58,4 @@ git clone https://github.com/HaithamOumerzoug/Opticienne.git
 
 Ce projet est autorisé selon les termes de la [MIT license](https://opensource.org/licenses/MIT).
 
-For more information voilà la [documentation du Laravel 7.x](https://laravel.com/docs/7.x/)
+Pour plus informations voilà la [documentation du Laravel 7.x](https://laravel.com/docs/7.x/)
