@@ -1,4 +1,4 @@
-<p align="center"><img alt="" src="public/Images/logo.png" width="50" height="50"></p>
+<p align="center"><img alt="https://github.com/HaithamOumerzoug/Opticienne" src="public/Images/logo.png" href="" width="50" height="50"></p>
 
 <p align="center">
 <h1 align="center">Opticienne</h1>
@@ -48,7 +48,7 @@ git clone https://github.com/HaithamOumerzoug/Opticienne.git
 
 * ### Patients
 <p align="left">
-  <img alt="" src="public/Images/Patient.png" width="1117" height="752">
+  <img alt="" src="public/Images/Patient.png" width="700" height="400">
 </p>
 
 
