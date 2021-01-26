@@ -1,4 +1,4 @@
-<p align="center"><img src="https://res.cloudinary.com/dtfbvvkyp/image/upload/v1566331377/laravel-logolockup-cmyk-red.svg" width="400"></p>
+<p align="center"><img alt="" src="public/Images/logo.png" width="50" height="50"></p>
 
 <p align="center">
 <h1 align="center">Opticienne</h1>
@@ -36,7 +36,7 @@ Ensuite, vous pouvez simplement exécuter votre projet en tapons la commande :
 ```php 
 php artisan serve
 ```
-- Ou vous pouvez instaler le projet via la commande :
+- Ou vous pouvez installer le projet via la commande :
 ```git
 git clone https://github.com/HaithamOumerzoug/Opticienne.git
 ```
@@ -46,6 +46,10 @@ git clone https://github.com/HaithamOumerzoug/Opticienne.git
   <img alt="" src="public/Images/Login.png" width="617" height="352">
 </p>
 
+* ### Patients
+<p align="left">
+  <img alt="" src="public/Images/Patient.png" width="1117" height="752">
+</p>
 
 
 
@@ -54,4 +58,4 @@ git clone https://github.com/HaithamOumerzoug/Opticienne.git
 
 Ce projet est autorisé selon les termes de la [MIT license](https://opensource.org/licenses/MIT).
 
-for more information voilà la [documentation du Laravel 7.x](https://laravel.com/docs/7.x/)
+For more information voilà la [documentation du Laravel 7.x](https://laravel.com/docs/7.x/)
