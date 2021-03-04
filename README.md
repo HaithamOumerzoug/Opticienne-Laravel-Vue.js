@@ -38,7 +38,7 @@ php artisan serve
 ```
 - Ou vous pouvez installer le projet via la commande :
 ```git
-git clone https://github.com/HaithamOumerzoug/Opticienne.git
+git clone https://github.com/HaithamOumerzoug/Opticienne-Laravel-Vue.js.git
 ```
 ## Interfaces
 * ### Login
