@@ -49793,38 +49793,17 @@ module.exports = function(module) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.js");
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(vue__WEBPACK_IMPORTED_MODULE_0__);
-/**
- * First we will load all of this project's JavaScript dependencies which
- * includes Vue and other libraries. It is a great starting point when
- * building robust, powerful web applications using Vue and Laravel.
- */
 var _require = __webpack_require__(/*! axios */ "./node_modules/axios/index.js"),
     Axios = _require["default"];
 
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
- //import VeeValidate from 'vee-validate';
-//Vue.use(VeeValidate);
 
 window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.js");
-/**
- * The following block of code may be used to automatically register your
- * Vue components. It will recursively scan this directory for the Vue
- * components and automatically register them with their "basename".
- *
- * Eg. ./components/ExampleComponent.vue -> <example-component></example-component>
- */
-// const files = require.context('./', true, /\.vue$/i)
-// files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
-
 vue__WEBPACK_IMPORTED_MODULE_0___default.a.component('example-component', __webpack_require__(/*! ./components/ExampleComponent.vue */ "./resources/js/components/ExampleComponent.vue")["default"]);
-vue__WEBPACK_IMPORTED_MODULE_0___default.a.component('add-commande', __webpack_require__(/*! ./components/AddCommandeComponent.vue */ "./resources/js/components/AddCommandeComponent.vue")["default"]);
-/**
- * Next, we will create a fresh Vue application instance and attach it to
- * the page. Then, you may begin adding components to this application
- * or customize the JavaScript scaffolding to fit your unique needs.
- */
+vue__WEBPACK_IMPORTED_MODULE_0___default.a.component('add-commande', __webpack_require__(/*! ./components/AddCommandeComponent.vue */ "./resources/js/components/AddCommandeComponent.vue")["default"]); //const url="http://127.0.0.1:8000"
 
+var url = "".concat(window.location.protocol, "//").concat(window.location.host);
 var app = new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
   el: '#app',
   data: {
@@ -49888,9 +49867,9 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
 
       for (var i = 0; i < this.commandes.length; i++) {
         x++;
-        Axios.post('http://127.0.0.1:8000/commandes', this.commandes[i]).then(function (response) {
+        Axios.post("".concat(url, "/commandes"), this.commandes[i]).then(function (response) {
           if (response.data.etat && x == _this.commandes.length) {
-            document.location.href = "http://127.0.0.1:8000/commandes";
+            document.location.href = "".concat(url, "/commandes");
           } else {
             alert("Qte out of stock!!");
           }
@@ -49906,9 +49885,9 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
 
       for (var i = 0; i < this.stocks.length; i++) {
         c++;
-        Axios.post('http://127.0.0.1:8000/stocks', this.stocks[i]).then(function (response) {
+        Axios.post("".concat(url, "/stocks"), this.stocks[i]).then(function (response) {
           if (response.data.etat && c == _this2.stocks.length) {
-            document.location.href = "http://127.0.0.1:8000/stocks";
+            document.location.href = "".concat(url, "/stocks");
           }
         })["catch"](function (error) {
           console.error('errors: ', error);
@@ -49918,7 +49897,7 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
     getprice: function getprice() {
       this.commandes.forEach(function (commande) {
         if (commande.article != "" && commande.Qte_cmd > 0) {
-          Axios.get('http://127.0.0.1:8000/getprice/' + commande.article + '/' + commande.Qte_cmd).then(function (response) {
+          Axios.get("".concat(url, "/getprice/").concat(commande.article, "/").concat(commande.Qte_cmd)).then(function (response) {
             commande.price = response.data;
           })["catch"](function (error) {
             console.error('errors: ', error);
@@ -49930,7 +49909,7 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
       var _this3 = this;
 
       if (this.allCommandes.length < 1) {
-        Axios.get('http://127.0.0.1:8000/getcommandes').then(function (response) {
+        Axios.get("".concat(url, "/getcommandes")).then(function (response) {
           for (var i = 0; i < _this3.c; i++) {
             _this3.affichenewcommande();
           }
@@ -49953,7 +49932,7 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
     getnumbercommande: function getnumbercommande() {
       var _this4 = this;
 
-      Axios.get('http://127.0.0.1:8000/getcommandes').then(function (response) {
+      Axios.get("".concat(url, "/getcommandes")).then(function (response) {
         _this4.c = response.data.length;
       })["catch"](function (error) {
         console.error('errors: ', error);

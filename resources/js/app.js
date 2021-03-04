@@ -10,7 +10,8 @@ window.Vue = require('vue');
 Vue.component('example-component', require('./components/ExampleComponent.vue').default);
 Vue.component('add-commande', require('./components/AddCommandeComponent.vue').default);
 
-const url="http://127.0.0.1:8000"
+//const url="http://127.0.0.1:8000"
+const url=`${window.location.protocol}//${window.location.host}`
 const app = new Vue({
     el: '#app',
     data:{
@@ -88,7 +89,7 @@ const app = new Vue({
                 Axios.post(`${url}/commandes`,this.commandes[i])
                 .then(response => {
                     if(response.data.etat && x==this.commandes.length){
-                        document.location.href="http://127.0.0.1:8000/commandes"
+                        document.location.href=`${url}/commandes`
                     }
                     else{
                         alert("Qte out of stock!!");
@@ -105,7 +106,7 @@ const app = new Vue({
                 Axios.post(`${url}/stocks`,this.stocks[i])
                 .then(response => {
                     if(response.data.etat && c==this.stocks.length){
-                        document.location.href="http://127.0.0.1:8000/stocks"
+                        document.location.href=`${url}/stocks`
                     }
                     
                 })
@@ -116,7 +117,7 @@ const app = new Vue({
             
                 this.commandes.forEach(commande => {
                     if(commande.article !="" && commande.Qte_cmd>0){
-                        Axios.get(`${url}/getprice/`+commande.article+'/'+commande.Qte_cmd)
+                        Axios.get(`${url}/getprice/${commande.article}/${commande.Qte_cmd}`)
                         .then(response => {
                             commande.price=response.data;
                             
