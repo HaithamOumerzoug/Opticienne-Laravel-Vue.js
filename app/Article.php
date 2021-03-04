@@ -8,6 +8,7 @@ class Article extends Model
 {
     use SoftDeletes;
     protected $fillable=['Nom_artc','Prix_de_vente','Prix_achat'];
+
     public function categorie(){
         return $this->belongsTo('App\Categorie');
     } 
@@ -22,10 +23,5 @@ class Article extends Model
     {
         return $this->hasMany('App\Articleastock');
     }
-    /*public static function boot(){ //une fois on supprime une article , ces commande aussi vons spprimer
-        parent::boot();
-        static::deleting(function(Article $article){
-            $article->commande()->delete();
-        });
-    }*/
+    
 }

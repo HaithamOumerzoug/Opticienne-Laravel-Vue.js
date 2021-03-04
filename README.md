@@ -21,6 +21,7 @@ Ce projet à but de réaliser une application web pour la géstion commerciale d
 ## Conditions 
 - PHP  >= 7.2.5
 - Laravel >= 7.x
+- Vue.js 2.5.*
 
 ## Usage
 1. Créer un nouveu projet laravel en tapons cet commande `(Laravel version 7.x)` :

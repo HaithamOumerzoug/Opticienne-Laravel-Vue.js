@@ -73,7 +73,6 @@ class PatientController extends Controller
     public function edit($id)
     {
         $patient=Patient::findOrFail($id);
-        // $this->authorize('update',$patient);
 
         return view('patients.edit', [
             'patient'=>$patient

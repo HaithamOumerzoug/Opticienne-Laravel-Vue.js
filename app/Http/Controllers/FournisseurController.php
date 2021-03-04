@@ -45,12 +45,12 @@ class FournisseurController extends Controller
     public function store(StoreFournisseur $request)
     {
         $patient=new Fournisseur();
-        $patient->Nom_fourn=$request->input('nom');
-        $patient->Adresse_fourn=$request->input('adresse');
-        $patient->pays=$request->input('pays');
-        $patient->ville=$request->input('ville');
-        $patient->Codepostale=$request->input('codepostale');
-        $patient->Telephone_fourn=$request->input('telephone');
+        $patient->Nom_fourn=$request->get('nom');
+        $patient->Adresse_fourn=$request->get('adresse');
+        $patient->pays=$request->ingetput('pays');
+        $patient->ville=$request->get('ville');
+        $patient->Codepostale=$request->get('codepostale');
+        $patient->Telephone_fourn=$request->get('telephone');
 
         $request->session()->flash('status','Votre fournisseur à été enregitrer!');
         $patient->save();
@@ -78,7 +78,6 @@ class FournisseurController extends Controller
     public function edit($id)
     {
         $fournisseur=Fournisseur::findOrFail($id);
-        // $this->authorize('update',$fournisseur);
 
         return view('fournisseurs.edit', [
             'fournisseur'=>$fournisseur
@@ -95,12 +94,12 @@ class FournisseurController extends Controller
     public function update(StoreFournisseur $request, $id)
     {
         $patient=Fournisseur::findOrFail($id);
-        $patient->Nom_fourn=$request->input('nom');
+        $patient->Nom_fourn=$request->get('nom');
         $patient->Adresse_fourn=$request->input('adresse');
-        $patient->pays=$request->input('pays');
-        $patient->ville=$request->input('ville');
-        $patient->Codepostale=$request->input('codepostale');
-        $patient->Telephone_fourn=$request->input('telephone');
+        $patient->pays=$request->get('pays');
+        $patient->ville=$request->get('ville');
+        $patient->Codepostale=$request->get('codepostale');
+        $patient->Telephone_fourn=$request->get('telephone');
 
         $request->session()->flash('status','Votre modification à été bien enregitrer!');
         $patient->save();
@@ -118,7 +117,6 @@ class FournisseurController extends Controller
     {
         $fournisseur=Fournisseur::findOrFail($id);
         $art=Article::where('fournisseur_id',$id)->get();
-        // $this->authorize('delete',$fournisseur); 
                 
         if($art->isEmpty()){
             Fournisseur::destroy($id);
@@ -134,7 +132,7 @@ class FournisseurController extends Controller
     {
         $fournisseurs=Fournisseur::all();
         $pdf = PDF::loadView('fournisseurs.listfournisseurs',['fournisseurs'=>$fournisseurs]);
-        // $name='';
+        
         return $pdf->download('Liste'.' '.'Fournisseurs.pdf');
     }
 }

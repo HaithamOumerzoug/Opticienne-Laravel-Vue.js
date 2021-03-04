@@ -142,8 +142,8 @@ const app = new Vue({
                         this.allCommandes[i].Qte=response.data[i].Qte;
                         this.allCommandes[i].datecmd=response.data[i].date_cmd;
                     }
-                            })
-                        .catch(error => {console.error('errors: ',error);})
+                    })
+                    .catch(error => {console.error('errors: ',error);})
             }else{
                 this.hideallcommandes();
             }

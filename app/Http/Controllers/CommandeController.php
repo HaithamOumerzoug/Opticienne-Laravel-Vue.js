@@ -78,8 +78,6 @@ class CommandeController extends Controller
             $cnt->Qte=$request->get('Qte_cmd');
             $cnt->Prix_de_vente=$art->Prix_de_vente* $cnt->Qte;
            
-            
-            
             $request->session()->flash('status','Votre commande(s) à été bien enregitrer!');
             $cnt->save();
 
@@ -93,11 +91,6 @@ class CommandeController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
-    {
-        //
-    }
-
     /**
      * Show the form for editing the specified resource.
      *
