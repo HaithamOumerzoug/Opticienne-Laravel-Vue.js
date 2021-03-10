@@ -6,8 +6,6 @@ import Vue from 'vue';
 
 window.Vue = require('vue');
 
-
-Vue.component('example-component', require('./components/ExampleComponent.vue').default);
 Vue.component('add-commande', require('./components/AddCommandeComponent.vue').default);
 
 //const url="http://127.0.0.1:8000"

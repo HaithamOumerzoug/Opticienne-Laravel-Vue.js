@@ -3,12 +3,7 @@
 @section('content')
 <div class="container mt-5" id="app">
     <add-commande></add-commande>
-    <div class="">
-        <div class="col-md-10"></div>
-        <div class="col-md-2 float-right mb-2">
-            <input type="button" class="btn btn-success" v-on:click="addnewcomande" value="More article">
-        </div>
-    </div>
+    
     <div class="col-md-8 offset-2"> 
             <div class="container my-3" v-for="(commande,index) in commandes" >
                 
