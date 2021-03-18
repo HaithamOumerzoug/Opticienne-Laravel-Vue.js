@@ -51,8 +51,25 @@ git clone https://github.com/HaithamOumerzoug/Opticienne-Laravel-Vue.js.git
   <img alt="" src="public/Images/Patient.png" width="700" height="400">
 </p>
 
+* ### Articles
+<p align="left">
+  <img alt="" src="public/Images/Articles.png" width="700" height="400">
+</p>
 
+* #### Add Article
+<p align="left">
+  <img alt="" src="public/Images/AddArticle.png" width="700" height="400">
+</p>
 
+* ### Commands
+<p align="left">
+  <img alt="" src="public/Images/Commandes.png" width="700" height="400">
+</p>
+
+* #### Add Commandes
+<p align="left">
+  <img alt="" src="public/Images/AddCommandes.png" width="700" height="400">
+</p>
 
 ## License
 
